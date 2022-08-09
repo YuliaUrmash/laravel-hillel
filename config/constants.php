@@ -1,9 +1,10 @@
 <?php
+
 return [
-    'db'=>[
-        'roles'=>[
-            'admin'=>'Admin',
-            'customer'=>'Customer',
+    'db' => [
+        'roles' => [
+            'admin' => 'Admin',
+            'customer' => 'Customer',
         ]
     ]
 ];
