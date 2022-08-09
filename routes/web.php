@@ -22,6 +22,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth', 'admin'])->group(fun
         return view('dashboard', ['role' => 'Admin']);
     })->name('dashboard');
 
+    Route::resource('products', \App\Http\Controllers\Admin\ProductsController::class)->except(['show']);
 });
 
 
