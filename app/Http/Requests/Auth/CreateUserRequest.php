@@ -21,17 +21,13 @@ class CreateUserRequest extends FormRequest
     public function messages()
     {
         return [
-            'name:min' => 'User name should be more than 2 symbols.',
-            'surname:min' => 'User surname should be more than 2 symbols',
-            'phone' => 'Incorrect phone format.',
-            'password' => 'Incorrect password.'
+            'name:min' => 'User name should be more than 2 symbols',
+            'surname:min' => 'User name should be more than 2 symbols',
+            'phone' => 'Incorrect phone format',
+            'password' => 'Incorrect password'
         ];
     }
-    //$request->validate([
-    //'name' => ['required', 'string', 'max:255'],
-    //'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-    //'password' => ['required', 'confirmed', Rules\Password::defaults()],
-    //]);
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -42,9 +38,9 @@ class CreateUserRequest extends FormRequest
         return [
             'name' => ['required', 'min:2', 'max:35'],
             'surname' => ['required', 'min:2', 'max:50'],
-            'birthdate' => ['required', 'date', 'before_or_equal:-18 years'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'string', 'max:15', 'unique:users', new Phone],
+            'birthdate' => ['required', 'date', 'before_or_equal:-18 years'],
             'password' => ['required', 'confirmed', Password::defaults()],
         ];
     }

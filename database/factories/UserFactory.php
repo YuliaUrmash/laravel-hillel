@@ -20,6 +20,7 @@ class UserFactory extends Factory
     public function definition()
     {
         $role = Role::customer()->first();
+
         return [
             'role_id' => $role->id,
             'name' => fake()->name(),
@@ -32,7 +33,6 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
         ];
     }
-
 
     public function admin()
     {

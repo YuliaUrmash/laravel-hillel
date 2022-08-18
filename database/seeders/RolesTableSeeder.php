@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Role;
-
 use Illuminate\Database\Seeder;
 
 class RolesTableSeeder extends Seeder
@@ -17,6 +16,5 @@ class RolesTableSeeder extends Seeder
     {
         $roles = collect(config('constants.db.roles'));
         $roles->each(fn($role) => Role::firstOrCreate(['name' => $role]));
-
     }
 }
