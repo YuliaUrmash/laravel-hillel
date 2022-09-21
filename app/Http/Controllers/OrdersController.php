@@ -4,11 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class CheckoutController extends Controller
+class OrdersController extends Controller
 {
     public function __invoke()
     {
-        return view('checkout/index');
+        // TODO: Implement __invoke() method.
     }
 }
-

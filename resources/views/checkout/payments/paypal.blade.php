@@ -1,5 +1,3 @@
-table File  10 lines (9 sloc)  358 Bytes
-
 <!-- Set up a container element for the button -->
 <div id="paypal-button-container"></div>
 

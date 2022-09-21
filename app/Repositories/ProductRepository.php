@@ -6,7 +6,7 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
-use App\Repositories\Contacts\ProductRepositoryContract;
+use App\Repositories\Contracts\ProductRepositoryContract;
 use App\Services\ImagesService;
 use Illuminate\Support\Facades\DB;
 

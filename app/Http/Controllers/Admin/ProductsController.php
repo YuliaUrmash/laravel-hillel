@@ -7,7 +7,7 @@ use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Category;
 use App\Models\Product;
-use App\Repositories\Contacts\ProductRepositoryContract;
+use App\Repositories\Contracts\ProductRepositoryContract;
 use App\Services\Contracts\FileStorageServiceContract;
 use App\Services\FileStorageService;
 use App\Services\ImagesService;

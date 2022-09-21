@@ -2,7 +2,7 @@
 
 namespace App\Providers;
 
-use App\Repositories\Contacts\ProductRepositoryContract;
+use App\Repositories\Contracts\ProductRepositoryContract;
 use App\Repositories\ProductRepository;
 use Illuminate\Support\ServiceProvider;
 
