@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Services\AwsPublicLinkService;
 use Illuminate\Support\Facades\Route;
 use App\Services\ImagesService;
 
@@ -20,8 +21,8 @@ Route::get('invoice', function () {
     $order = \App\Models\Order::all()->last();
     $service = new \App\Services\InvoicesService();
     $invoice = $service->generate($order);
-    $test = $invoice->save('public');
-    dd($test->url());
+    $test = $invoice->save('s3');
+    dd(AwsPublicLinkService::generate($test->filename));
 });
 
 Route::delete(
@@ -77,7 +78,7 @@ Route::middleware('auth')->group(function() {
         Route::get('wishlist', \App\Http\Controllers\Account\WishListController::class)->name('wishlist');
         Route::get('telegram/callback', \App\Http\Controllers\TelegramCallbackController::class)->name('telegram.callback');
         Route::name('orders')->group(function () {
-            Route::get('orders', [\App\Http\Controllers\Admin\OrdersController::class, 'index'])->name('.index');
+            Route::get('orders', [\App\Http\Controllers\OrdersController::class, 'index'])->name('.index');
         });
     });
     Route::prefix('paypal')->group(function() {
